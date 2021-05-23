@@ -1,0 +1,19 @@
+.job-top-marg {
+    margin-top: 5%;
+}
+
+.forms-job .form-control {
+    padding: 1.6rem 1.6rem;
+}
+
+.content-wrapper > .content {
+    padding: 2rem 0.5rem;
+}
+
+.action_on_jobs button {
+    border-radius: 0;
+}
+
+.action_on_jobs .dropdown-menu.show {
+    border-radius: 0;
+}
