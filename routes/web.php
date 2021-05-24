@@ -31,4 +31,8 @@ Route::prefix('job')->group(function () {
     Route::post('/store', [JobController::class, 'store'])->name('job.store');
     Route::get('/{id}/edit', [JobController::class, 'edit'])->name('job.edit');
     Route::put('/{id}/update', [JobController::class, 'update'])->name('job.update');
+    Route::delete('/{id}/delete', [JobController::class, 'destroy'])->name('job.destroy');
 });
+
+// front-end routes 
+Route::get('/', [JobController::class, 'latestAddedJobs']);

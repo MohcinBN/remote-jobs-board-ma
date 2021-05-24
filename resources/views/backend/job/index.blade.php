@@ -10,12 +10,28 @@
     <div class="container-fluid">
 <div class="row forms-job">
     <div class="col-12">
+        @if (session('status'))
+        <div class="alert alert-success" style="font-weight: bold;">
+            {{ session('status') }}
+        </div>
+        @endif
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <strong>Check Those Errors!</strong> 
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">Latest Added Jobs</h3>
 
           <div class="card-tools">
-            <div class="input-group input-group-sm" style="width: 150px;">
+            <div class="input-group input-group-sm">
               <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
               <div class="input-group-append">
@@ -58,7 +74,12 @@
                         </button>
                         <div class="dropdown-menu">
                           <a class="dropdown-item" href="{{ route('job.edit', $job->id) }}"><i class="far fa-edit"></i> Edit</a>
-                          <a class="dropdown-item" href="" style="color: red;"><i class="fas fa-trash-alt"></i> Delete</a>
+                          <form action="{{ route('job.destroy', $job->id) }}" method="post">
+                              @method('DELETE')
+                              @csrf
+                            <button type="submit" class="dropdown-item deleteJob" style="color: red;"><i class="fas fa-trash-alt"></i> Delete</button>
+                          </form>
+                         
                         </div>
                       </div>
                 </td>

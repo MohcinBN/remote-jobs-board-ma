@@ -15,8 +15,15 @@ class JobController extends Controller
     public function index()
     {
         //
-        $latestJobs = Job::paginate(4);
+        $latestJobs = Job::paginate(8);
         return view('backend.job.index', compact('latestJobs'));
+    }
+
+    public function latestAddedJobs()
+    {
+        //
+        $latestJobsForHomePage = Job::orderBy('id', 'DESC')->paginate(8);
+        return view('welcome', compact('latestJobsForHomePage'));
     }
 
     /**
@@ -134,6 +141,16 @@ class JobController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // delete a job
+        $jobToBeDeleted = Job::FindOrFail($id);
+        $jobToBeDeleted->delete();
+
+
+        return redirect()->route('job.index')->with('status','Job Deleted successfully :( ');
+        
+        // return json for API using..
+        return response()->json([
+            'success' => 'Job Deleted successfully :( '
+        ]);
     }
 }

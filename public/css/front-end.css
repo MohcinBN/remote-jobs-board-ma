@@ -1,0 +1,164 @@
+body {
+    background: #ffffff;
+}
+:root {
+    --navy: #183153;
+    --white: #ffffff;
+}
+a:hover {
+    text-decoration: none;
+}
+.account {
+    top: 38px;
+}
+
+.account a {
+    background: var(--navy);
+    color: var(--white);
+    padding: 0px 8px 0 8px;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.brand h1 {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: var(--navy);
+}
+
+.create-job {
+    background-color: var(--navy);
+    padding: 8px;
+    right: 15px;
+    top: 20px;
+    width: 111px;
+    text-align: center;
+}
+
+.create-job a {
+    color: var(--white);
+}
+
+.header-text p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.header-text p:first-child {
+    font-size: 1.8rem;
+}
+
+header {
+    background-image: url(../images/bg-header.png);
+    padding: 50px 0 50px;
+    border-bottom: 1px solid #ccc;
+}
+
+.create-job:hover {
+    text-decoration: none;
+    border: 2px solid var(--navy);
+    background-color: var(--white);
+}
+
+.create-job:hover a {
+    color: var(--navy);
+}
+
+.account a:hover {
+    background: var(--white);
+    color: var(--navy);
+    padding: 0px 8px 0 8px;
+    border: 2px solid var(--navy);
+}
+
+.subscribe-email {
+    background: #ccc;
+}
+.subscribe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscribe .form-control {
+    width: 50%;
+    margin-right: 15px;
+    border-radius: 0;
+}
+
+.send-btn {
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 0;
+}
+
+.send-btn:hover {
+    background: var(--white);
+    color: var(--navy);
+    border: 2px solid var(--navy);
+}
+
+.filter {
+    display: flex;
+}
+.filter a {
+    background: var(--navy);
+    color: var(--white);
+    padding: 4px 4px 4px 4px;
+}
+
+.filter a.active {
+    background: #48c774;
+    font-weight: bold;
+}
+.d-flex {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.single-job {
+    margin: 2em 0;
+    padding: 1em;
+    border-radius: 5px;
+    border: 2px solid var(--navy);
+}
+
+.single-job:hover {
+    background-color: #edf2f7;
+}
+
+.apply a {
+    background-color: #f56565;
+    padding: 8px 25px 8px 25px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.apply a:hover {
+    background-color: #fff;
+    padding: 8px 25px 8px 25px;
+    color: #f56565;
+    font-weight: bold;
+    border: 2px solid var(--navy);
+}
+.short-description {
+    margin-top: 1rem;
+}
+
+.homepagination .page-item.active .page-link {
+    background-color: var(--navy);
+    border-color: var(--navy);
+}
+
+.homepagination {
+    padding: 8px 0 21px;
+}
