@@ -178,3 +178,25 @@ header {
     border-bottom: none !important;
     color: #fff;
 }
+.job-title {
+    font-weight: bold;
+}
+
+.single-job span {
+    margin-right: 1rem;
+}
+
+footer {
+    border-top: 1px solid #ccc;
+    background-image: url(../images/bg-header.png);
+    padding: 20px 0 20px;
+}
+
+footer nav > li > a {
+    color: var(--navy);
+    font-weight: bold;
+}
+footer nav > li > a:hover {
+    border: 1px solid var(--navy);
+    color: var(--navy);
+}

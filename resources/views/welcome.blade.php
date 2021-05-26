@@ -97,6 +97,34 @@
                 </div>
             </div>
         </div>
+
+    <footer>
+        <nav class="nav" style="justify-content: center;">
+            <li class="nav-item">
+                <a class="nav-link active" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Twitter</a>
+            </li>
+        </nav>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!-- jQuery -->
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
