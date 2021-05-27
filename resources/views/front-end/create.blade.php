@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>The Moroccan remote job board</title>
+        <title>The Moroccan remote job board - Create a Job</title>
           <!--front end board css -->
           <link rel="stylesheet" href="{{ asset('css/job.css') }}">
             <!-- Google Font: Source Sans Pro -->
@@ -66,36 +66,7 @@
                 <a href="#" class="active">All</a>
             </div>
 
-            <h4 class="mt-4" style="font-weight: bold;">New Added Jobs</h4>
-
-            <div class="row">
-                @foreach ($latestJobsForHomePage as $job)
-                <div class="col-md-12 single-job">
-                    <div class="row">
-                        <div class="col-md-2 company-name text-center">
-                            <p>{{ $job->company_name }}</p>
-                        </div>
-                        <div class="col-md-7">
-                            <h4 class="job-title">{{ $job->title }}</h4>
-                            <span><i class="fas  fa-clock"></i> {{ $job->type }}</span>
-                            <span><i class="fas fa-thumbtack"></i> {{ $job->city }}</span>
-                            <span><i class="fas fa-calendar-week"></i> {{ $job->created_at }}</span>
-                            <p class="short-description">
-                                Kaiyo is an online marketplace for pre-owned furniture that’s made to last.
-                            </p>
-                        </div>
-                        <div class="col-md-3 apply text-center">
-                            <p style="margin-right: 11px;">{{ $job->created_at->diffForHumans() }}</p>
-                            <a href="{{ "http://". $job->url }}">Apply</a>
-                    
-                        </div>
-                    </div>
-                </div>  
-                @endforeach
-                <div class="d-flex justify-content-center homepagination mx-auto">
-                    {{ $latestJobsForHomePage->links() }}
-                </div>
-            </div>
+            FORM FOR CREATE A NEW JOB
         </div>
 
     <footer>

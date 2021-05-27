@@ -36,6 +36,11 @@ class JobController extends Controller
         return view('backend.job.create');
     }
 
+    public function create_job_from_visitors()
+    {
+        return view('front-end.create');
+    }
+
     /**
      * Store a newly created resource in storage.
      *

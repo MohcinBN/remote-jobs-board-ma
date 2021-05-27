@@ -36,3 +36,4 @@ Route::prefix('job')->group(function () {
 
 // front-end routes 
 Route::get('/', [JobController::class, 'latestAddedJobs']);
+Route::get('/create', [JobController::class, 'create_job_from_visitors'])->name('visitor.create');
