@@ -20,6 +20,7 @@ class CreateJobsTable extends Migration
             $table->string('url');
             $table->string('type');
             $table->string('city');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

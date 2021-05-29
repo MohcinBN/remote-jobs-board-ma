@@ -200,3 +200,34 @@ footer nav > li > a:hover {
     border: 1px solid var(--navy);
     color: var(--navy);
 }
+
+.forms-job-ui .card-header {
+    background-color: transparent;
+    border-bottom: 2px solid var(--navy);
+}
+
+.forms-job-ui label {
+    color: var(--navy);
+    font-weight: bold;
+}
+
+.forms-job-ui .btn-success {
+    background-color: var(--navy);
+    padding: 8px;
+    right: 15px;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    border-color: var(--navy);
+    border-radius: 0;
+}
+
+.forms-job-ui .btn-success:hover {
+    border: 2px solid var(--navy);
+    background-color: var(--white);
+    color: var(--navy);
+}
+
+.forms-job-ui .form-control {
+    border-radius: 0;
+}

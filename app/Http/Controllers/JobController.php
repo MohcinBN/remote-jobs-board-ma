@@ -77,6 +77,36 @@ class JobController extends Controller
 
     }
 
+    public function store_from_ui(Request $request)
+    {
+        // store a new job
+       $request->validate([
+            'company_name' => 'required',
+            'title' => 'required',
+            'url' => 'required',
+            'type' => 'required',
+            'city' => 'required',
+        ]);
+
+        $job = new Job;
+        $job->company_name = trim($request->company_name);
+        $job->title = trim($request->title);
+        $job->url = trim($request->url);
+        $job->type = $request->type;
+        $job->city = $request->city;
+
+        $job->save();
+
+        //dd($job);
+
+        return redirect()->route('front-end.create')->with('status','Your Job has been sented, our admins will review it and accept it latter, Greetings :) ');
+         
+
+        // return json for API using..
+        return response()->json('Job created!');
+
+    }
+
     /**
      * Display the specified resource.
      *
