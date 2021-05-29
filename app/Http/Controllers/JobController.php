@@ -99,7 +99,7 @@ class JobController extends Controller
 
         //dd($job);
 
-        return redirect()->route('front-end.create')->with('status','Your Job has been sented, our admins will review it and accept it latter, Greetings :) ');
+        return redirect()->route('visitor.create')->with('status','Your Job has been sent, out admins will review it and accept it later, Greetings :) ');
          
 
         // return json for API using..

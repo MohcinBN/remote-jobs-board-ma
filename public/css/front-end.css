@@ -228,6 +228,17 @@ footer nav > li > a:hover {
     color: var(--navy);
 }
 
-.forms-job-ui .form-control {
+.forms-job-ui .form-control,
+.forms-job-ui .input-group-text {
+    border-radius: 0;
+}
+
+.forms-job-ui .card {
+    border-radius: 0;
+    border-color: 1px ​solid var(--navy);
+    margin-bottom: 67px;
+}
+
+.forms-job-ui .alert {
     border-radius: 0;
 }
