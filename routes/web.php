@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\SubscriptionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,5 @@ Route::prefix('job')->group(function () {
 Route::get('/', [JobController::class, 'latestAddedJobs']);
 Route::get('/create', [JobController::class, 'create_job_from_visitors'])->name('visitor.create');
 Route::post('/store', [JobController::class, 'store_from_ui'])->name('job.visitor.store');
+
+Route::post('/store', [SubscriptionController::class, 'store'])->name('subscription.email.store');

@@ -20,6 +20,8 @@
             <link rel="stylesheet" href="{{asset('css/job.css')}}">
             <link rel="stylesheet" href="{{asset('css/app.css')}}">
             <link rel="stylesheet" href="{{asset('css/front-end.css')}}">
+
+      
  
     </head>
     <body>
@@ -39,21 +41,22 @@
                 </div>
             @endif --}}
             <div class="col-md-12 subscribe-email">
-                <form class="subscribe">
+                <form class="subscribe" method="POST" action="{{ route('subscription.email.store') }}">
+                    @csrf
                     <p style="margin-top: 1rem;margin-right: 11px;"><strong>Get an email of all new remote jobs</strong></p>
                     <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email.." class="w-100">
                     <button type="submit" class="btn btn-primary send-btn">Submit</button>
                   </form>
             </div>
 
-            <div class="filter mt-4">
+            {{-- <div class="filter mt-4">
                 <a href="#">Remote Full-Time</a>
                 <a href="#" class="active">All</a>
-            </div>
+            </div> --}}
 
             <h4 class="mt-4" style="font-weight: bold;">New Added Jobs</h4>
 
-            <div class="row">
+            <div class="row" id="jobs">
                 @foreach ($latestJobsForHomePage as $job)
                 <div class="col-md-12 single-job">
                     <div class="row">
@@ -77,6 +80,7 @@
                     </div>
                 </div>  
                 @endforeach
+
                 <div class="d-flex justify-content-center homepagination mx-auto">
                     {{ $latestJobsForHomePage->links() }}
                 </div>
@@ -134,5 +138,6 @@
 <script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
 <!-- main js file -->
 <script src="{{ asset('js/main.js') }}"></script>
+
     </body>
 </html>

@@ -19,12 +19,15 @@ class JobController extends Controller
         return view('backend.job.index', compact('latestJobs'));
     }
 
-    public function latestAddedJobs()
+    public function latestAddedJobs(Request $request)
     {
         //
         $latestJobsForHomePage = Job::orderBy('id', 'DESC')->paginate(8);
+
         return view('welcome', compact('latestJobsForHomePage'));
+
     }
+    
 
     /**
      * Show the form for creating a new resource.
