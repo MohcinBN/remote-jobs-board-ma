@@ -40,4 +40,8 @@ Route::get('/', [JobController::class, 'latestAddedJobs']);
 Route::get('/create', [JobController::class, 'create_job_from_visitors'])->name('visitor.create');
 Route::post('/store', [JobController::class, 'store_from_ui'])->name('job.visitor.store');
 
-Route::post('/store', [SubscriptionController::class, 'store'])->name('subscription.email.store');
+
+
+Route::post('/store/subscription', [SubscriptionController::class, 'store'])->name('subscription.email.store');
+Route::get('/subscribed', [SubscriptionController::class, 'done'])->name('subscription.done');
+Route::get('/all/subscription', [SubscriptionController::class, 'index'])->name('subscription.all');

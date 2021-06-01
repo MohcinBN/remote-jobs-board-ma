@@ -9,5 +9,8 @@
         <li class="nav-item">
             <a class="nav-link" href="#">Twitter</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">RSS</a>
+        </li>
     </nav>
 </footer>

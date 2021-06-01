@@ -71,7 +71,7 @@
   </div>
 </div>
 <div class="d-flex justify-content-center">
-{{ $subscription->links() }}
+{{ $subscriptions->links() }}
 </div>
 </section>
 @endsection

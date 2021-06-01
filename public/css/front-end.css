@@ -40,6 +40,7 @@ a:hover {
     top: 20px;
     width: 111px;
     text-align: center;
+    z-index: 99;
 }
 
 .create-job a {
@@ -241,4 +242,35 @@ footer nav > li > a:hover {
 
 .forms-job-ui .alert {
     border-radius: 0;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .apply a {
+        display: block;
+    }
+    .single-job {
+        margin: 2em 1rem;
+    }
+    .subscribe {
+        display: block;
+        text-align: center;
+    }
+    .subscribe .form-control {
+        width: 100%;
+        margin-right: 0;
+        border-radius: 0;
+        margin-bottom: 20px;
+    }
+    .subscribe .send-btn {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    .subscribe-email {
+        padding: 1rem;
+    }
+    .header-text p:first-child {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        margin-bottom: 12px;
+    }
 }

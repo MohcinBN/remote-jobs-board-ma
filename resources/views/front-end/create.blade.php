@@ -23,22 +23,7 @@
  
     </head>
     <body>
-        <header class="container-fluid">
-            <div class="absolute account left-0">
-                <a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a>
-                <a href="{{ route('login') }}">Account</a>
-            </div>
-            <div class="col-md-8 text-center mt-3 brand mx-auto">
-                <a href="/"><h1>Remote MA</h1></a>
-            </div>
-            <div class="fixed create-job">
-                <a href="{{ route('visitor.create') }}">Post a Job</a>
-            </div>
-            <div class="header-text col-md-12 text-center">
-                <p>The first Moroccan remote job board</p>
-                <p>Inchaalah this will be the first IT remote job board in Morocco!</p>
-            </div>
-        </header>
+      @include('front-end.header')
         <div class="container mx-auto mt-4">
             {{-- @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -182,19 +167,7 @@
         </div>
     </div>
 
-    <footer>
-        <nav class="nav" style="justify-content: center;">
-            <li class="nav-item">
-                <a class="nav-link active" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Twitter</a>
-            </li>
-        </nav>
-    </footer>
+    @include('front-end.footer')
 
 
 

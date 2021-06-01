@@ -31,6 +31,12 @@ class SubscriptionController extends Controller
         return view('welcome');
     }
 
+    public function done()
+    {
+        //
+        return view('front-end.comfirm');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -49,7 +55,7 @@ class SubscriptionController extends Controller
 
         $subscription->save();
 
-        return view('welcome')->with('status',' Subscribed! Thank you :) ');
+        return redirect()->route('subscription.done')->with('status',' Subscribed! Thank you :) ');
         
 
         // return json for API using..

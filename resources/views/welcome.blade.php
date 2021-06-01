@@ -41,6 +41,22 @@
                 </div>
             @endif --}}
             <div class="col-md-12 subscribe-email">
+                @if (session('status'))
+                <div class="alert alert-success" style="font-weight: bold;">
+                    {{ session('status') }}
+                </div>
+                @endif
+        
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <strong>Check Those Errors!</strong> 
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 <form class="subscribe" method="POST" action="{{ route('subscription.email.store') }}">
                     @csrf
                     <p style="margin-top: 1rem;margin-right: 11px;"><strong>Get an email of all new remote jobs</strong></p>
@@ -74,7 +90,7 @@
                         </div>
                         <div class="col-md-3 apply text-center">
                             <p style="margin-right: 11px;">{{ $job->created_at->diffForHumans() }}</p>
-                            <a href="{{ "http://". $job->url }}">Apply</a>
+                            <a href="{{ "http://". $job->url }}" target="_blank">Apply</a>
                     
                         </div>
                     </div>
