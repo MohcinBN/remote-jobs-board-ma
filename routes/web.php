@@ -33,6 +33,8 @@ Route::prefix('job')->group(function () {
     Route::get('/{id}/edit', [JobController::class, 'edit'])->name('job.edit');
     Route::put('/{id}/update', [JobController::class, 'update'])->name('job.update');
     Route::delete('/{id}/delete', [JobController::class, 'destroy'])->name('job.destroy');
+    // change status route
+    Route::post('/chnage-status/{id}', [JobController::class, 'changeJobStatus'])->name('change-status');
 });
 
 // front-end routes 
@@ -41,7 +43,8 @@ Route::get('/create', [JobController::class, 'create_job_from_visitors'])->name(
 Route::post('/store', [JobController::class, 'store_from_ui'])->name('job.visitor.store');
 
 
-
+// Subscribe Routes
 Route::post('/store/subscription', [SubscriptionController::class, 'store'])->name('subscription.email.store');
 Route::get('/subscribed', [SubscriptionController::class, 'done'])->name('subscription.done');
 Route::get('/all/subscription', [SubscriptionController::class, 'index'])->name('subscription.all');
+

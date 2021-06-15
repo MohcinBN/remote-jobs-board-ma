@@ -66,7 +66,9 @@
                 <td>{{$job->url}}</td>
                 <td>{{$job->type}}</td>
                 <td>{{$job->city}}</td>
-                <td>{{$job->status}}</td>
+                <td>
+                  {{$job->status}}
+                </td>
                 <td class="action_on_jobs">
                     <div class="btn-group">
                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

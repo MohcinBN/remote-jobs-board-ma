@@ -48,9 +48,6 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="/dashboard" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
     </ul>
 
     <!-- Right navbar links -->
@@ -104,39 +101,49 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
+              <i class="fas fa-briefcase"></i> 
               <p>
-                Jobs Control
+                Jobs Management
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{ route('job.index') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-eye"></i>
                   <p>All Jobs</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('job.create') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-plus"></i>
                   <p>Add New</p>
                 </a>
               </li>
             </ul>
+          </li>
 
-            <li class="nav-header">Subscription</li>
-            <li class="nav-item">
-              <a href="{{ route('subscription.all') }}" class="nav-link">
-                <i class="nav-icon far fa-circle text-danger"></i>
-                <p class="text">See all</p>
-              </a>
-            </li>
-            
-          <li class="nav-header">GO out</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-mail-bulk"></i>
+              <p>
+                Subscriptions
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('subscription.all') }}" class="nav-link">
+                  <i class="fas fa-eye"></i>
+                  <p>View All</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-header">Admin Out</li>
           <li class="nav-item">
             <a href="{{ route('logout') }}" class="nav-link">
-              <i class="nav-icon far fa-circle text-danger"></i>
+              <i class="fas fa-sign-out-alt"></i>
               <p class="text">Log Out</p>
             </a>
           </li>
@@ -153,7 +160,7 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2021 <a href="#">Remotjobs Morocco</a>.</strong>
+    <strong>Copyright &copy; 2021 <a href="remoter.ma">Remoter Morocco</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 1.0

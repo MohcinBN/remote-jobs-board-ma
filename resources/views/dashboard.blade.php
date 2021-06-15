@@ -6,13 +6,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">Dashboard</h1>
-            </div><!-- /.col -->
-            <div class="col-sm-6">
-              <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Dashboard v1</li>
-              </ol>
+              <h1 class="m-0">Romoter Dashboard</h1>
             </div><!-- /.col -->
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -22,9 +16,10 @@
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
+          <h3 class="m-2">Global Statistics</h3>
           <!-- Small boxes (Stat box) -->
-          <div class="row">
-            <div class="col-lg-3 col-6">
+          <div class="row mx-auto">
+            <div class="col-md-4">
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
@@ -39,7 +34,7 @@
               </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-6">
+            <div class="col-md-4">
               <!-- small box -->
               <div class="small-box bg-success">
                 <div class="inner">
@@ -54,7 +49,7 @@
               </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-6">
+            <div class="col-md-4">
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
@@ -69,7 +64,7 @@
               </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-6">
+            <div class="col-md-4">
               <!-- small box -->
               <div class="small-box bg-danger">
                 <div class="inner">

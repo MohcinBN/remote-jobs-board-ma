@@ -129,8 +129,10 @@
                                         <option value="Casablanca">Casablanca</option>
                                         <option value="Tanger">Tanger</option>
                                         <option value="Tetouan">Tetouan</option>
+                                        <option value="Marrakesh">Marrakesh</option>
                                         <option value="Fes">Fes</option>
-                                        <option value="Mekness">Mekness</option>
+                                        <option value="Mekness">Meknes</option>
+                                        <option value="Mohammedia">Mohammedia</option>
                                       </select>
                                     </div>
                                   </div>
