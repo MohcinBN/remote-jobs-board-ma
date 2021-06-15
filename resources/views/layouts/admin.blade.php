@@ -211,5 +211,26 @@
 <script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
 <!-- main js file -->
 <script src="{{ asset('js/main.js') }}"></script>
+
+<script>
+$(document).ready(function(){
+  $("#status").change(function () {
+        alert("clicked");
+        var status = $('input[name="status[]:checked'].val();
+
+        $.ajax({
+                type:'POST',
+                url:'/chnage-status',
+                headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+                data: { "status" : status },
+                success: function(data){
+                  if(data.data.success){
+                    //do something
+                  }
+                }
+            });
+        });
+});
+</script>
 </body>
 </html>

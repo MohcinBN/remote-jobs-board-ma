@@ -34,7 +34,7 @@ Route::prefix('job')->group(function () {
     Route::put('/{id}/update', [JobController::class, 'update'])->name('job.update');
     Route::delete('/{id}/delete', [JobController::class, 'destroy'])->name('job.destroy');
     // change status route
-    Route::post('/chnage-status/{id}', [JobController::class, 'changeJobStatus'])->name('change-status');
+    Route::post('/chnage-status', [JobController::class, 'changeJobStatus'])->name('change-status');
 });
 
 // front-end routes 

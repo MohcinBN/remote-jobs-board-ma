@@ -67,7 +67,9 @@
                 <td>{{$job->type}}</td>
                 <td>{{$job->city}}</td>
                 <td>
-                  {{$job->status}}
+                  {{-- <input type="checkbox" value="{{$job->status}}"> --}}
+                  <input type="checkbox" name="status" id="status" value="{{$job->status}}">
+            
                 </td>
                 <td class="action_on_jobs">
                     <div class="btn-group">

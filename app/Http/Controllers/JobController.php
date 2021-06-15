@@ -7,11 +7,7 @@ use Illuminate\Http\Request;
 
 class JobController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         //
@@ -28,12 +24,6 @@ class JobController extends Controller
 
     }
     
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('backend.job.create');
@@ -44,12 +34,6 @@ class JobController extends Controller
         return view('front-end.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         // store a new job
@@ -110,23 +94,11 @@ class JobController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
@@ -135,13 +107,6 @@ class JobController extends Controller
         return view('backend.job.edit', compact('jobToBeEdited'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         // update the job id
@@ -171,12 +136,6 @@ class JobController extends Controller
         return response()->json('Job Updated!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         // delete a job
@@ -190,5 +149,32 @@ class JobController extends Controller
         return response()->json([
             'success' => 'Job Deleted successfully :( '
         ]);
+    }
+
+    public function changeJobStatus(Request $request, $id)
+    {
+        
+        try {
+
+            $changeStatus = Job::FindOrfail($id);
+            if ($changeStatus->status == 1) {
+                $changeStatus->status == 0;
+            } else {
+                $changeStatus->status == 1;
+            }
+
+            return response()->json([
+                'data' => [
+                  'success' => $changeStatus->save(),
+                  'message' => 'status changed'
+                ]
+              ]);
+            
+          
+          } catch (\Exception $e) {
+          
+              return $e->getMessage();
+          }          
+        
     }
 }
