@@ -274,3 +274,7 @@ footer nav > li > a:hover {
         margin-bottom: 12px;
     }
 }
+
+.company-name {
+    border: 1px solid #ccc;
+}

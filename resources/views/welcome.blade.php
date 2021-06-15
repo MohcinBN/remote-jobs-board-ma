@@ -40,7 +40,7 @@
                 <div class="col-md-12 single-job">
                     <div class="row">
                         <div class="col-md-2 company-name text-center">
-                            <p title="Company Name">{{ $job->company_name }}</p>
+                            <p title="Company Name" class="copmany-name">{{ $job->company_name }}</p>
                         </div>
                         <div class="col-md-7">
                             <h4 class="job-title" title="Job Title">{{ $job->title }}</h4>
