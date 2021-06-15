@@ -22,7 +22,7 @@ class JobController extends Controller
     public function latestAddedJobs(Request $request)
     {
         //
-        $latestJobsForHomePage = Job::orderBy('id', 'DESC')->paginate(8);
+        $latestJobsForHomePage = Job::where('status', 1)->orderBy('id', 'DESC')->paginate(8);
 
         return view('welcome', compact('latestJobsForHomePage'));
 

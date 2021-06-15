@@ -27,63 +27,26 @@
     <body>
         @include('front-end.header')
         <div class="container mx-auto mt-4">
-            {{-- @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif --}}
-            <div class="col-md-12 subscribe-email">
-                @if (session('status'))
-                <div class="alert alert-success" style="font-weight: bold;">
-                    {{ session('status') }}
-                </div>
-                @endif
-        
-                @if ($errors->any())
-                <div class="alert alert-danger">
-                    <strong>Check Those Errors!</strong> 
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif
-                <form class="subscribe" method="POST" action="{{ route('subscription.email.store') }}">
-                    @csrf
-                    <p style="margin-top: 1rem;margin-right: 11px;"><strong>Get an email of all new remote jobs</strong></p>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email.." class="w-100">
-                    <button type="submit" class="btn btn-primary send-btn">Submit</button>
-                  </form>
-            </div>
-
+            @include('front-end.subscribe-form')
             {{-- <div class="filter mt-4">
                 <a href="#">Remote Full-Time</a>
                 <a href="#" class="active">All</a>
             </div> --}}
 
-            <h4 class="mt-4" style="font-weight: bold;">New Added Jobs</h4>
+            <h4 class="mt-4" style="font-weight: bold;">Latest Jobs</h4>
 
             <div class="row" id="jobs">
                 @foreach ($latestJobsForHomePage as $job)
                 <div class="col-md-12 single-job">
                     <div class="row">
                         <div class="col-md-2 company-name text-center">
-                            <p>{{ $job->company_name }}</p>
+                            <p title="Company Name">{{ $job->company_name }}</p>
                         </div>
                         <div class="col-md-7">
-                            <h4 class="job-title">{{ $job->title }}</h4>
-                            <span><i class="fas  fa-clock"></i> {{ $job->type }}</span>
-                            <span><i class="fas fa-thumbtack"></i> {{ $job->city }}</span>
-                            <span><i class="fas fa-calendar-week"></i> {{ $job->created_at }}</span>
+                            <h4 class="job-title" title="Job Title">{{ $job->title }}</h4>
+                            <span title="Job Type"><i class="fas  fa-clock"></i> {{ $job->type }}</span>
+                            <span title="Job Local"><i class="fas fa-thumbtack"></i> {{ $job->city }}</span>
+                            <span title="Posted At"><i class="fas fa-calendar-week"></i> {{ $job->created_at }}</span>
                             <p class="short-description">
                                 Kaiyo is an online marketplace for pre-owned furniture that’s made to last.
                             </p>

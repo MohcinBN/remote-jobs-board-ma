@@ -11,6 +11,6 @@
     </div>
     <div class="header-text col-md-12 text-center">
         <p>The first Moroccan remote job board</p>
-        <p>Inchaalah this will be the first IT remote job board in Morocco!</p>
+        <p>First IT remote job board in Morocco!</p>
     </div>
 </header>
