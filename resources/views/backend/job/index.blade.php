@@ -54,6 +54,7 @@
                 <th>Type</th>
                 <th>City</th>
                 <th>Status</th>
+                <th>Sender Email</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -67,10 +68,12 @@
                 <td>{{$job->type}}</td>
                 <td>{{$job->city}}</td>
                 <td>
-                  {{-- <input type="checkbox" value="{{$job->status}}"> --}}
-                  <input type="checkbox" name="status" id="status" value="{{$job->status}}">
-            
+                  <input data-id="{{$job->id}}" class="toggle-class" id="status"
+                  type="checkbox" data-onstyle="success" data-offstyle="danger" 
+                  data-toggle="toggle" data-on="enabled" data-off="disabled" 
+                  {{ $job->status ? 'checked' : '' }}>
                 </td>
+                <td>{{$job->sender_email}}</td>
                 <td class="action_on_jobs">
                     <div class="btn-group">
                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -29,6 +29,7 @@
   <!--job board css -->
   <link rel="stylesheet" href="{{asset('css/job.css')}}">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -183,6 +184,7 @@
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- ChartJS -->
@@ -211,26 +213,5 @@
 <script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
 <!-- main js file -->
 <script src="{{ asset('js/main.js') }}"></script>
-
-<script>
-$(document).ready(function(){
-  $("#status").change(function () {
-        alert("clicked");
-        var status = $('input[name="status[]:checked'].val();
-
-        $.ajax({
-                type:'POST',
-                url:'/chnage-status',
-                headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}' },
-                data: { "status" : status },
-                success: function(data){
-                  if(data.data.success){
-                    //do something
-                  }
-                }
-            });
-        });
-});
-</script>
 </body>
 </html>

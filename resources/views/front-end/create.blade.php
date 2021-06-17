@@ -136,6 +136,16 @@
                                       </select>
                                     </div>
                                   </div>
+                                  <div class="form-group">
+                                    <label>Your Email (optional):</label>
+                                    <div class="input-group">
+                                        
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-at"></i></span>
+                                      </div>
+                                      <input type="text" class="form-control" name="sender_email" placeholder="Your email to let you know when we anable your job">
+                                    </div>
+                                  </div>
                       
                                   <div class="form-group">
                                     <button type="submit" class="btn btn-block btn-success btn-lg">Submit The Job</button>

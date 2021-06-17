@@ -11,7 +11,7 @@ class JobController extends Controller
     public function index()
     {
         //
-        $latestJobs = Job::paginate(8);
+        $latestJobs = Job::orderBy('id', 'DESC')->paginate(8);
         return view('backend.job.index', compact('latestJobs'));
     }
 
@@ -81,12 +81,13 @@ class JobController extends Controller
         $job->url = trim($request->url);
         $job->type = $request->type;
         $job->city = $request->city;
+        $job->sender_email = $request->sender_email;
 
         $job->save();
 
         //dd($job);
 
-        return redirect()->route('visitor.create')->with('status','Your Job has been sent, out admins will review it and accept it later, Greetings :) ');
+        return redirect()->route('visitor.create')->with('status','Your Job has been sent, one of our admins will review it and accept it later, Greetings :) ');
          
 
         // return json for API using..
@@ -151,30 +152,37 @@ class JobController extends Controller
         ]);
     }
 
-    public function changeJobStatus(Request $request, $id)
+    public function changeJobStatus(Request $request)
     {
+        $changeStatus = Job::find($request->job_id);
+        $changeStatus->status = $request->status;
+        $changeStatus->save();
+  
+        return response()->json([
+            'success'=>'Job status has been changed']
+        );
         
-        try {
+        // try {
 
-            $changeStatus = Job::FindOrfail($id);
-            if ($changeStatus->status == 1) {
-                $changeStatus->status == 0;
-            } else {
-                $changeStatus->status == 1;
-            }
+        //     $changeStatus = Job::FindOrfail($id);
+        //     if ($changeStatus->status == 1) {
+        //         $changeStatus->status == 0;
+        //     } else {
+        //         $changeStatus->status == 1;
+        //     }
 
-            return response()->json([
-                'data' => [
-                  'success' => $changeStatus->save(),
-                  'message' => 'status changed'
-                ]
-              ]);
+        //     return response()->json([
+        //         'data' => [
+        //           'success' => $changeStatus->save(),
+        //           'message' => 'status changedr'
+        //         ]
+        //       ]);
             
           
-          } catch (\Exception $e) {
+        //   } catch (\Exception $e) {
           
-              return $e->getMessage();
-          }          
+        //       return $e->getMessage();
+        //   }          
         
     }
 }
