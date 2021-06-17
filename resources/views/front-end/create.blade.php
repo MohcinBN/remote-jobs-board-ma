@@ -36,9 +36,9 @@
     
                 <div class="col-md-8 mx-auto job-top-marg">
             
-                    @if (session('status'))
+                    @if (session('status_job_submited'))
                     <div class="alert alert-success" style="font-weight: bold;">
-                        {{ session('status') }}
+                        {{ session('status_job_submited') }}
                     </div>
                     @endif
             
@@ -75,6 +75,19 @@
                         </div>
                          
                       </div>
+
+                      <div class="form-group">
+                        <label>Small Description about company</label>
+                        <div class="input-group">
+                            
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-file-alt"></i></span>
+                          </div>
+                          <textarea name="small_description" id="small_description" rows="5" class="form-control" placeholder="small description about the company">
+
+                          </textarea>
+                        </div>
+                      </div>
             
                       <div class="form-group">
                         <label>Job Title :</label>
@@ -90,7 +103,7 @@
             
                       <!-- phone mask -->
                       <div class="form-group">
-                        <label>Link to the url :</label>
+                        <label>Link to the apply url :</label>
                         <div class="input-group">
                             
                           <div class="input-group-prepend">
@@ -146,6 +159,8 @@
                                       <input type="text" class="form-control" name="sender_email" placeholder="Your email to let you know when we anable your job">
                                     </div>
                                   </div>
+
+                                  
                       
                                   <div class="form-group">
                                     <button type="submit" class="btn btn-block btn-success btn-lg">Submit The Job</button>

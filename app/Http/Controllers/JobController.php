@@ -69,6 +69,7 @@ class JobController extends Controller
         // store a new job
        $request->validate([
             'company_name' => 'required',
+            'small_description' => 'required',
             'title' => 'required',
             'url' => 'required',
             'type' => 'required',
@@ -77,6 +78,7 @@ class JobController extends Controller
 
         $job = new Job;
         $job->company_name = trim($request->company_name);
+        $job->small_description = $request->small_description;
         $job->title = trim($request->title);
         $job->url = trim($request->url);
         $job->type = $request->type;
@@ -87,7 +89,7 @@ class JobController extends Controller
 
         //dd($job);
 
-        return redirect()->route('visitor.create')->with('status','Your Job has been sent, one of our admins will review it and accept it later, Greetings :) ');
+        return redirect()->route('visitor.create')->with('status_job_submited','Your Job has been sent, one of our admins will review it and accept it later, Greetings :) ');
          
 
         // return json for API using..
