@@ -52,6 +52,19 @@
           </div>
 
           <div class="form-group">
+            <label>Small Description about company</label>
+            <div class="input-group">
+                
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-file-alt"></i></span>
+              </div>
+              <textarea name="small_description" id="small_description" rows="5" class="form-control" placeholder="small description about the company">
+
+              </textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fab fa-dev"></i></span>

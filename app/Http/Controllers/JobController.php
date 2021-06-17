@@ -39,6 +39,7 @@ class JobController extends Controller
         // store a new job
        $request->validate([
             'company_name' => 'required',
+            'small_description' => 'required',
             'title' => 'required',
             'url' => 'required',
             'type' => 'required',
@@ -47,6 +48,7 @@ class JobController extends Controller
 
         $job = new Job;
         $job->company_name = trim($request->company_name);
+        $job->small_description = $request->small_description;
         $job->title = trim($request->title);
         $job->url = trim($request->url);
         $job->type = $request->type;
