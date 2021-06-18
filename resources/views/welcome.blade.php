@@ -48,7 +48,7 @@
                             <span title="Job Local"><i class="fas fa-thumbtack"></i> {{ $job->city }}</span>
                             <span title="Posted At"><i class="fas fa-calendar-week"></i> {{ $job->created_at }}</span>
                             <p class="short-description">
-                                Kaiyo is an online marketplace for pre-owned furniture that’s made to last.
+                                {{ $job->small_description }}
                             </p>
                         </div>
                         <div class="col-md-3 apply text-center">
