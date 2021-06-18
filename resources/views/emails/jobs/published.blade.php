@@ -4,6 +4,6 @@
 Your job has been published ! :D
 
 Thanks,<br>
-Remoter.ma
+Remoter.ma, <br>
 Don't reply to this email
 @endcomponent

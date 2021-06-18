@@ -165,8 +165,10 @@ class JobController extends Controller
         $changeStatus->status = $request->status;
         $changeStatus->save();
 
-        DB::table('job')->where();
-        Mail::to('rapmabiz@gmail.com')->send(new JobPublished());
+        $senderEmail = $changeStatus->sender_email;
+        //echo "<pre>"; print_r($senderEmail); die;
+        //DB::table('job')->where();
+        Mail::to($senderEmail)->send(new JobPublished());
 
         return response()->json([
             'success'=>'Job status has been changed']
