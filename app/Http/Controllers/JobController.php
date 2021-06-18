@@ -161,40 +161,25 @@ class JobController extends Controller
     public function changeJobStatus(Request $request)
     {
 
-        $changeStatus = Job::find($request->job_id);
-        $changeStatus->status = $request->status;
-        $changeStatus->save();
+        try {
 
-        $senderEmail = $changeStatus->sender_email;
-        //echo "<pre>"; print_r($senderEmail); die;
-        //DB::table('job')->where();
-        Mail::to($senderEmail)->send(new JobPublished());
-
-        return response()->json([
-            'success'=>'Job status has been changed']
-        );
-        
-        // try {
-
-        //     $changeStatus = Job::FindOrfail($id);
-        //     if ($changeStatus->status == 1) {
-        //         $changeStatus->status == 0;
-        //     } else {
-        //         $changeStatus->status == 1;
-        //     }
-
-        //     return response()->json([
-        //         'data' => [
-        //           'success' => $changeStatus->save(),
-        //           'message' => 'status changedr'
-        //         ]
-        //       ]);
-            
+            $changeStatus = Job::find($request->job_id);
+            $changeStatus->status = $request->status;
+            $changeStatus->save();
+    
+            // get linked email to the job
+            $senderEmail = $changeStatus->sender_email;
+    
+            Mail::to($senderEmail)->send(new JobPublished());
+    
+            return response()->json([
+                'success'=>'Job status has been changed']
+            );
           
-        //   } catch (\Exception $e) {
+          } catch (\Exception $e) {
           
-        //       return $e->getMessage();
-        //   }          
+              return $e->getMessage();
+          }          
         
     }
 }
