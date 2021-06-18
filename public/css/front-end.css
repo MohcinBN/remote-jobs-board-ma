@@ -96,6 +96,12 @@ header {
 }
 
 .send-btn {
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 0;
+}
+
+.send-btn-login {
     background: var(--navy) !important;
     color: var(--white);
     width: 73%;
