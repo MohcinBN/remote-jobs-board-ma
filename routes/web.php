@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\SubscriptionController;
 
 /*
@@ -35,6 +36,12 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('/{id}/delete', [JobController::class, 'destroy'])->name('job.destroy');
         // change status route
         Route::get('/chnage-status', [JobController::class, 'changeJobStatus'])->name('change-status');
+    });
+    // Page Management
+    Route::prefix('page')->group(function () {
+        Route::get('/all', [PageController::class, 'index'])->name('page.index');
+        Route::get('/create', [PageController::class, 'create'])->name('page.create');
+        Route::post('/store', [PageController::class, 'store'])->name('page.store');
     });
 });
 
