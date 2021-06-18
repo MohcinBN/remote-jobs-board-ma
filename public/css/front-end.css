@@ -96,9 +96,10 @@ header {
 }
 
 .send-btn {
-    background: var(--navy);
+    background: var(--navy) !important;
     color: var(--white);
-    border-radius: 0;
+    width: 73%;
+    border-radius: 0 !important;
 }
 
 .send-btn:hover {
