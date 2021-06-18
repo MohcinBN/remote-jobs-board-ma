@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
+use App\Mail\JobPublished;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class JobController extends Controller
 {
@@ -158,10 +160,14 @@ class JobController extends Controller
 
     public function changeJobStatus(Request $request)
     {
+
         $changeStatus = Job::find($request->job_id);
         $changeStatus->status = $request->status;
         $changeStatus->save();
-  
+
+        DB::table('job')->where();
+        Mail::to('rapmabiz@gmail.com')->send(new JobPublished());
+
         return response()->json([
             'success'=>'Job status has been changed']
         );
