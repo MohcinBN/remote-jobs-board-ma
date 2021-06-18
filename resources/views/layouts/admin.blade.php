@@ -126,6 +126,30 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link">
+              <i class="fas fa-file"></i>
+              <p>
+                Pages Management
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('page.index') }}" class="nav-link">
+                  <i class="fas fa-eye"></i>
+                  <p>All Pages</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('page.create') }}" class="nav-link">
+                  <i class="fas fa-plus"></i>
+                  <p>Add New</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="fas fa-mail-bulk"></i>
               <p>
                 Subscriptions

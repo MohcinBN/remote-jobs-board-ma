@@ -82,6 +82,7 @@ header {
 
 .subscribe-email {
     background: #ccc;
+    border-radius: 5px;
 }
 .subscribe {
     display: flex;
