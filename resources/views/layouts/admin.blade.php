@@ -30,6 +30,9 @@
   <link rel="stylesheet" href="{{asset('css/job.css')}}">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <!-- summernote css/js -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -237,5 +240,11 @@
 <script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
 <!-- main js file -->
 <script src="{{ asset('js/main.js') }}"></script>
+ 
+<script type="text/javascript">
+  $('#description').summernote({
+      height: 400
+  });
+</script>
 </body>
 </html>

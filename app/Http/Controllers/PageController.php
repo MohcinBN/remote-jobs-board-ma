@@ -26,7 +26,35 @@ class PageController extends Controller
         $page = new Page;
 
         $page->title = trim($request->title);
-        $page->description = trim($request->description);
+
+
+        $description = $request->input('description');
+
+        $dom = new \DomDocument();
+
+        $dom->loadHtml($description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);    
+
+        $images = $dom->getElementsByTagName('img');
+
+
+        foreach($images as $k => $img){
+
+            $data = $img->getAttribute('src');
+
+            list($type, $data) = explode(';', $data);
+            list(, $data)      = explode(',', $data);
+            $data = base64_decode($data);
+            $image_name= "/storage/images" . time().$k.'.png';
+            $path = public_path() . $image_name;
+            file_put_contents($path, $data);
+            $img->removeAttribute('src');
+            $img->setAttribute('src', $image_name);
+        }
+
+        $description = $dom->saveHTML();
+        //dd($description);
+
+        $page->description = $description;
 
         $page->save();
 
@@ -36,7 +64,8 @@ class PageController extends Controller
 
     public function show($id)
     {
-        //
+        $page = Page::where('id', $id)->get();
+        dd($page);
     }
 
 
