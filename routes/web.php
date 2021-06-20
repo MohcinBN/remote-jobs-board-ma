@@ -42,6 +42,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/all', [PageController::class, 'index'])->name('page.index');
         Route::get('/create', [PageController::class, 'create'])->name('page.create');
         Route::post('/store', [PageController::class, 'store'])->name('page.store');
+        Route::get('/{id}-{slug}', [PageController::class, 'show'])->name('page.show');
     });
 });
 

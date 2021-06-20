@@ -66,6 +66,8 @@ class PageController extends Controller
     {
         $page = Page::where('id', $id)->get();
         dd($page);
+        return view('page.show', compact('page'));
+        
     }
 
 

@@ -49,7 +49,9 @@
               <tr>
                 <th>ID</th>
                 <th>Title</th>
-                <th>Action</th>
+                <th>
+                  Action
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -58,7 +60,15 @@
                 <td>{{ $page->id }}</td>
                 <td>{{ $page->title }}</td>
                 <td class="action_on_jobs">
-                    Actions
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Action
+                    </button>
+                    <div class="dropdown-menu">
+                      <a href="{{ route('page.show', $page->get_slug_params_as_url()) }}">Show</a>                     
+                    </div>
+                  </div>
+                  
                 </td>
               </tr>
             @endforeach
