@@ -42,14 +42,18 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/all', [PageController::class, 'index'])->name('page.index');
         Route::get('/create', [PageController::class, 'create'])->name('page.create');
         Route::post('/store', [PageController::class, 'store'])->name('page.store');
-        Route::get('/{id}-{slug}', [PageController::class, 'show'])->name('page.show');
     });
 });
+
 
 // front-end routes 
 Route::get('/', [JobController::class, 'latestAddedJobs']);
 Route::get('/create', [JobController::class, 'create_job_from_visitors'])->name('visitor.create');
 Route::post('/store', [JobController::class, 'store_from_ui'])->name('job.visitor.store');
+
+// static pages
+Route::get('/about-remoter', [PageController::class, 'about'])->name('page.about');
+Route::get('/contact-us', [PageController::class, 'contact'])->name('page.contact');
 
 
 // Subscribe Routes

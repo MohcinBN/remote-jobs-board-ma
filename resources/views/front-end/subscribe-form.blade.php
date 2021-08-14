@@ -18,7 +18,7 @@
         @endif
         <form class="subscribe" method="POST" action="{{ route('subscription.email.store') }}">
             @csrf
-            <p style="margin-top: 1rem;margin-right: 11px;"><strong>Get an email with new remote jobs</strong></p>
+            <p style="margin-top: 1rem;margin-right: 11px;"><strong>Get a weekly email with new remote jobs</strong></p>
             <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email.." class="w-100">
             <button type="submit" class="btn btn-primary send-btn">Submit</button>
           </form>

@@ -11,6 +11,6 @@
     </div>
     <div class="header-text col-md-12 text-center">
         <p>The first Moroccan remote job board</p>
-        <p>First IT remote job board in Morocco!. Have a <a href="mailto:#">Feedback?</a></p>
+        <p>First IT remote job board in Morocco!. Have a <a href="mailto:remoterma@gmail.com">Feedback?</a></p>
     </div>
 </header>

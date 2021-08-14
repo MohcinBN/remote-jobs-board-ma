@@ -1,1 +1,1 @@
-show page
+show pages 

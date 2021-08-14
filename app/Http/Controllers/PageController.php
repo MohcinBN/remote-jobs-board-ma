@@ -65,26 +65,18 @@ class PageController extends Controller
     public function show($id)
     {
         $page = Page::where('id', $id)->get();
-        dd($page);
-        return view('page.show', compact('page'));
-        
+        //return view('front-end.create');
+        return view('front-end.page', compact('page'));
     }
 
-
-    public function edit($id)
+    public function about()
     {
-        //
+        return view('front-end.about-remoter');
     }
 
-
-    public function update(Request $request, $id)
+    public function contact()
     {
-        //
+        return view('front-end.contact-us');
     }
 
-
-    public function destroy($id)
-    {
-        //
-    }
 }

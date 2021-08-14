@@ -4,19 +4,19 @@
             <a class="nav-link active" href="/">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="/">About</a>
+            <a class="nav-link active" href="/about-remoter">About</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="/contact-us">Contact</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Twitter</a>
+            <a class="nav-link" href="https://twitter.com/Remoterma">Twitter</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">RSS</a>
         </li>
     </nav>
     <div class="col-md-12 text-center">
-        made with simplicity and passion by <a href="/">Remoter.ma</a>
+        Made with simplicity and passion by <a href="/">Remoter.ma</a>
     </div>
 </footer>
