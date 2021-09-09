@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>The Moroccan remote job board</title>
+        <title>The first Moroccan remote jobs board</title>
           <!--front end board css -->
           <link rel="stylesheet" href="{{ asset('css/job.css') }}">
             <!-- Google Font: Source Sans Pro -->

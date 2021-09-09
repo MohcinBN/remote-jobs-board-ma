@@ -10,7 +10,7 @@
         <a href="{{ route('visitor.create') }}">Post a Job</a>
     </div>
     <div class="header-text col-md-12 text-center">
-        <p>The first Moroccan remote job board</p>
-        <p>First IT remote job board in Morocco!. Have a <a href="mailto:remoterma@gmail.com">Feedback?</a></p>
+        <p>The first Moroccan remote jobs board</p>
+        <p>First IT remote jobs board in Morocco!. Have a <a href="mailto:remoterma@gmail.com">Feedback?</a></p>
     </div>
 </header>
