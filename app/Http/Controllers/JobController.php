@@ -22,10 +22,12 @@ class JobController extends Controller
         //
         $latestJobsForHomePage = Job::where('status', 1)->orderBy('id', 'DESC')->paginate(8);
 
-        return view('welcome', compact('latestJobsForHomePage'));
+        //return view('welcome', compact('latestJobsForHomePage'));
 
+        // fetch usig API
+        return response()->json(['Jobs' => $latestJobsForHomePage, 200]);
     }
-    
+
     public function create()
     {
         return view('backend.job.create');
@@ -39,7 +41,7 @@ class JobController extends Controller
     public function store(Request $request)
     {
         // store a new job
-       $request->validate([
+        $request->validate([
             'company_name' => 'required',
             'small_description' => 'required',
             'title' => 'required',
@@ -60,18 +62,16 @@ class JobController extends Controller
 
         //dd($job);
 
-        return redirect()->route('job.create')->with('status','Job created successfully :) ');
-         
+        //return redirect()->route('job.create')->with('status', 'Job created successfully :) ');
 
         // return json for API using..
-        return response()->json('Job created!');
-
+        return response()->json(['message' => 'Job created!'], 200);
     }
 
     public function store_from_ui(Request $request)
     {
         // store a new job
-       $request->validate([
+        $request->validate([
             'company_name' => 'required',
             'small_description' => 'required',
             'title' => 'required',
@@ -93,12 +93,11 @@ class JobController extends Controller
 
         //dd($job);
 
-        return redirect()->route('visitor.create')->with('status_job_submited','Your Job has been sent, one of our admins will review it and accept it later, Greetings :) ');
-         
+        return redirect()->route('visitor.create')->with('status_job_submited', 'Your Job has been sent, one of our admins will review it and accept it later, Greetings :) ');
+
 
         // return json for API using..
         return response()->json('Job created!');
-
     }
 
     public function show($id)
@@ -133,11 +132,11 @@ class JobController extends Controller
         $job->city = $request->city;
 
         $job->save();
-        
+
         //dd($job);
 
-        return redirect()->route('job.create')->with('status','Job update successfully :) ');
-        
+        return redirect()->route('job.create')->with('status', 'Job update successfully :) ');
+
 
         // return json for API using..
         return response()->json('Job Updated!');
@@ -150,8 +149,8 @@ class JobController extends Controller
         $jobToBeDeleted->delete();
 
 
-        return redirect()->route('job.index')->with('status','Job Deleted successfully :( ');
-        
+        return redirect()->route('job.index')->with('status', 'Job Deleted successfully :( ');
+
         // return json for API using..
         return response()->json([
             'success' => 'Job Deleted successfully :( '
@@ -166,20 +165,20 @@ class JobController extends Controller
             $changeStatus = Job::find($request->job_id);
             $changeStatus->status = $request->status;
             $changeStatus->save();
-    
+
             // get linked email to the job
             $senderEmail = $changeStatus->sender_email;
-    
+
             Mail::to($senderEmail)->send(new JobPublished());
-    
-            return response()->json([
-                'success'=>'Job status has been changed']
+
+            return response()->json(
+                [
+                    'success' => 'Job status has been changed'
+                ]
             );
-          
-          } catch (\Exception $e) {
-          
-              return $e->getMessage();
-          }          
-        
+        } catch (\Exception $e) {
+
+            return $e->getMessage();
+        }
     }
 }
