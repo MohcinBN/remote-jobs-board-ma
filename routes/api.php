@@ -11,6 +11,7 @@ Route::prefix('job')->group(function () {
 });
 
 Route::get('/all-jobs', [JobController::class, 'latestAddedJobs'])->name('job.latest');
+Route::get('/single-job/{id}', [JobController::class, 'show'])->name('job.single');
 
 
 

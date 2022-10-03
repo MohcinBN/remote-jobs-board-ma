@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
+use App\Models\Category;
 use App\Mail\JobPublished;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -22,10 +23,10 @@ class JobController extends Controller
         //
         $latestJobsForHomePage = Job::where('status', 1)->orderBy('id', 'DESC')->paginate(8);
 
-        //return view('welcome', compact('latestJobsForHomePage'));
+        return view('welcome', compact('latestJobsForHomePage'));
 
         // fetch usig API
-        return response()->json(['Jobs' => $latestJobsForHomePage, 200]);
+        //return response()->json(['Jobs' => $latestJobsForHomePage, 200]);
     }
 
     public function create()
@@ -59,6 +60,12 @@ class JobController extends Controller
         $job->city = $request->city;
 
         $job->save();
+
+        // find the categories id in question 
+        $category = Category::find([1, 2]);
+
+        // assign this ids to job id using attach function to create the rows in the pivot table
+        $job->categories()->attach($category);
 
         //dd($job);
 
@@ -102,7 +109,8 @@ class JobController extends Controller
 
     public function show($id)
     {
-        //
+        $job = Job::find($id);
+        return response()->json(['Job' => $job], 200);
     }
 
     public function edit($id)
