@@ -47,7 +47,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 // front-end routes 
-Route::get('/', [JobController::class, 'latestAddedJobs']);
+Route::get('/', [JobController::class, 'latestAddedJobs'])->name('welcome');
 Route::get('/create', [JobController::class, 'create_job_from_visitors'])->name('visitor.create');
 Route::post('/store', [JobController::class, 'store_from_ui'])->name('job.visitor.store');
 
@@ -60,4 +60,3 @@ Route::get('/contact-us', [PageController::class, 'contact'])->name('page.contac
 Route::post('/store/subscription', [SubscriptionController::class, 'store'])->name('subscription.email.store');
 Route::get('/subscribed', [SubscriptionController::class, 'done'])->name('subscription.done');
 Route::get('/all/subscription', [SubscriptionController::class, 'index'])->name('subscription.all');
-

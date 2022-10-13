@@ -21,9 +21,15 @@ class JobController extends Controller
     public function latestAddedJobs(Request $request)
     {
         //
-        $latestJobsForHomePage = Job::where('status', 1)->orderBy('id', 'DESC')->paginate(8);
+        //dd($request->category);
+        if ($request->category) {
+            $latestJobsForHomePage = Category::where('name', $request->category)->firstorFail()->jobs()->paginate(3)->withQueryString();
+        } else {
+            $latestJobsForHomePage = Job::where('status', 1)->orderBy('id', 'DESC')->paginate(8);
+        }
 
-        return view('welcome', compact('latestJobsForHomePage'));
+        $categories = Category::all();
+        return view('welcome', compact('latestJobsForHomePage', 'categories'));
 
         // fetch usig API
         //return response()->json(['Jobs' => $latestJobsForHomePage, 200]);
