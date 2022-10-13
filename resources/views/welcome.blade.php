@@ -39,13 +39,13 @@
 
         Filter by category :
 
-        @foreach ($categories as $category)
-            <ul>
-                <li>
+        <ul class="filter-links">
+            @foreach ($categories as $category)
+                <li style="">
                     <a href="{{ route('welcome', ['category' => $category->name]) }}">{{ $category->name }}</a>
                 </li>
-            </ul>
-        @endforeach
+            @endforeach
+        </ul>
 
         <h4 class="mt-4" style="font-weight: bold;">Latest Jobs</h4>
 

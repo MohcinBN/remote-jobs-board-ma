@@ -286,3 +286,14 @@ footer nav > li > a:hover {
 .copmany-brand {
     border: 1px solid #ccc;
 }
+
+.filter-links {
+    display: flex; justify-content: center;padding-left: 0;
+}
+
+.filter-links li {
+    background: #ccc;
+padding: 0.2rem;
+margin-left: 11px;
+margin-right: 11px;
+}
