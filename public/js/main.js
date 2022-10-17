@@ -13,4 +13,12 @@ $(document).ready(function () {
             },
         });
     });
+
+    // search slide
+    var container = document.querySelector('filter-box');
+    var buttonToShowInput = document.querySelector('.search-btn');
+
+    buttonToShowInput.addEventListener('click', () => {
+        alert('btn clicked');
+    })
 });

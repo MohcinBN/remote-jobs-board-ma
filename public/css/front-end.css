@@ -293,7 +293,36 @@ footer nav > li > a:hover {
 
 .filter-links li {
     background: #ccc;
-padding: 0.2rem;
-margin-left: 11px;
-margin-right: 11px;
+    padding: 0.2rem;
+    margin-left: 11px;
+    margin-right: 11px;
+}
+
+.filter-box {
+    align-items: center;
+justify-content: center;
+}
+
+.filter-div {
+    text-align: center;
+}
+
+.search-btn {
+    background: #f56565;
+    background-color: rgb(245, 101, 101);
+  border: none;
+    border-top-color: currentcolor;
+    border-right-color: currentcolor;
+    border-bottom-color: currentcolor;
+    border-left-color: currentcolor;
+  border-radius: 0;
+}
+
+.filter-box svg {
+    width: 16px;
+    color: #fff;
+}
+
+#search:not(.active) {
+    display: none;
 }
