@@ -15,10 +15,24 @@ $(document).ready(function () {
     });
 
     // search slide
-    var container = document.querySelector('filter-box');
-    var buttonToShowInput = document.querySelector('.search-btn');
+    let container = document.getElementById('search');
+    let buttonToShowInput = document.querySelector('.search-btn');
 
     buttonToShowInput.addEventListener('click', () => {
-        alert('btn clicked');
+        //alert('btn clicked');
+
+        if (!container.classList.contains('active')) {
+            container.classList.add('active');
+            container.style.width = "100%";
+        } else {
+            container.classList.remove('active')
+            /** Set the height as 0px to trigger the slide up animation. */
+            //container.style.width = "auto"
+            
+            /** Remove the `active` class when the animation ends. */
+            container.addEventListener('transitionend', () => {
+                container.classList.remove('active')
+            }, {once: true})
+        }
     })
 });

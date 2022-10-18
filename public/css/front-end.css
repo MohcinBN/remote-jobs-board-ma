@@ -326,3 +326,7 @@ justify-content: center;
 #search:not(.active) {
     display: none;
 }
+
+.filter-box {
+    transition:  width .5s ease;
+}

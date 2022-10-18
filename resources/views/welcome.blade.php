@@ -39,7 +39,7 @@
 
         <div class="row filter-box">
             <div class="col-md-6">
-                <input type="search" name="search" id="search">
+                <input type="search" name="search" id="search" class="form-control">
                 <button class="btn btn-primary search-btn"><svg xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 512 512">
                         <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
