@@ -22,7 +22,10 @@ class JobController extends Controller
     {
         //
         //dd($request->category);
-        if ($request->category) {
+        if ($request->search) {
+            $latestJobsForHomePage = Job::where('title', 'like', '%' . $request->search . '%')
+                ->orwhere('company_name', 'like', '%' . $request->search . '%')->latest()->paginate(3);
+        } elseif ($request->category) {
             $latestJobsForHomePage = Category::where('name', $request->category)->firstorFail()->jobs()->paginate(3)->withQueryString();
         } else {
             $latestJobsForHomePage = Job::where('status', 1)->orderBy('id', 'DESC')->paginate(8);

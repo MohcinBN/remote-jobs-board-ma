@@ -39,7 +39,9 @@
 
         <div class="row filter-box">
             <div class="col-md-6">
-                <input type="search" name="search" id="search" class="form-control">
+                <form action="" method="">
+                    <input type="search" name="search" id="search" class="form-control">
+                </form>
                 <button class="btn btn-primary search-btn"><svg xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 512 512">
                         <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -64,7 +66,7 @@
         <h4 class="mt-4" style="font-weight: bold;">Latest Jobs</h4>
 
         <div class="row" id="jobs">
-            @foreach ($latestJobsForHomePage as $job)
+            @forelse ($latestJobsForHomePage as $job)
                 <div class="col-md-12 single-job">
                     <div class="row">
                         <div class="col-md-2 company-name text-center">
@@ -86,7 +88,9 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+            @empty
+                <h2 class="text-center">Sorry there is no result found</h2>
+            @endforelse
 
             <div class="d-flex justify-content-center homepagination mx-auto">
                 {{ $latestJobsForHomePage->links() }}
